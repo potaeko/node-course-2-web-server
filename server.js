@@ -5,6 +5,9 @@ const hbs = require('hbs')
 //fs because we want to print req to a file system
 const fs =require('fs')
 
+//set heroku port
+const port = process.env.PORT || 3000; //if env.port not exist using 3000
+
 var app = express(__dirname + '/views/partials');
 
 //reuse for template
@@ -27,9 +30,9 @@ app.use((req, res, next)=>{
     next() //next to tell express to continue
 })
 //maintenace middleware will stop before app.get in every res.render because there is no next()
-app.use((req, res, next)=>{
-    res.render('maintenance.hbs')
-});
+// app.use((req, res, next)=>{
+//     res.render('maintenance.hbs')
+// });
 
 //For static directory*** 
 //move to below all middleware to access only passed all the middleware
@@ -77,6 +80,7 @@ app.get('/bad',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{ //listen can take 2 arguments (port, function)
-    console.log('Server is up on port 3000')
+//heroku port
+app.listen(port,()=>{ //listen can take 2 arguments (port, function)
+    console.log(`Server is up on port ${port}`)
 });
