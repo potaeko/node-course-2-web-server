@@ -1,0 +1,15 @@
+{{!-- Dynamic rendering with handlebars,hbs --}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Some Website</title>
+    </head>
+    <body>
+        {{> header}}
+
+        <p>{{screamIt welcomeMessage}}</p> {{!--call screamIt helper and pass in welcomeMessage--}}
+
+       {{> footer}}
+    </body>
+</html>
