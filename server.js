@@ -80,6 +80,18 @@ app.get('/bad',(req,res)=>{
     })
 })
 
+// project route with Dynamic rendering handlebars
+app.get('/project',(req,res)=>{
+    res.render('project.hbs',{
+        project1: 'Project Test#1',
+        project2: 'Project Test#2',
+        project3: 'Project Test#3',
+        project4: 'Project Test#4',
+        project5: 'Project Test#5',
+        //currentYear: new Date().getFullYear()
+    })
+})
+
 //heroku port
 app.listen(port,()=>{ //listen can take 2 arguments (port, function)
     console.log(`Server is up on port ${port}`)

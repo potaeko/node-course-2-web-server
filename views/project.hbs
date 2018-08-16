@@ -1,0 +1,19 @@
+{{!-- Dynamic rendering with handlebars,hbs --}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Some Website</title>
+    </head>
+    <body>
+        {{> header}} {{!-- header partial --}}
+
+        <p>{{screamIt project1}}</p> {{!--call screamIt helper and pass in welcomeMessage--}}
+        <p>{{screamIt project2}}</p> 
+        <p>{{screamIt project3}}</p> 
+        <p>{{screamIt project4}}</p> 
+        <p>{{screamIt project5}}</p> 
+
+       {{> footer}} {{!-- footer partial --}}
+    </body>
+</html>
